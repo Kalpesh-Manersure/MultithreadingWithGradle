@@ -1,4 +1,4 @@
-package mypack;
+ package mypack;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -11,7 +11,7 @@ public class Mainclass {
 		ExecutorService exec= Executors.newFixedThreadPool(2);
 		exec.execute(new Test(user));
 		exec.execute(new Test());
-		exec.shutdown();
+		
 		
 		/*Thread t1=new Thread(new Test(user));
 		Thread t2=new Thread(new Test());

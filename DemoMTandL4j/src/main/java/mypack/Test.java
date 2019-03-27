@@ -4,9 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Test implements Runnable{
-	/*private Test t1;
-	private Object lock1=new Object();
-	private Object lock2=new Object();*/
+
+	private static Object lock1=new Object();
+	private static Object lock2=new Object();
 	int i=1;
     boolean valid;
     static boolean validit;
@@ -37,42 +37,10 @@ public class Test implements Runnable{
 	@Override
 	public void run() 
 	{
-		doit();
-		printit();
-	}
-	
-	public void doit()
-	{
-		 logger.debug("In Doit"+Thread.currentThread());
-	 synchronized(this)
+		//Printing the numbers only if user is valid
+		 synchronized(lock2)
 			{
-		          if(valid)
-				{
-					
-					try {
-						 	validit=true;
-						 	System.out.println("in Validate()"+Thread.currentThread());
-						 	logger.debug("Sleeping :"+Thread.currentThread());
-							Thread.sleep(1000);
-							logger.debug("Active :"+Thread.currentThread());
-							validit =false;
-						} 
-					catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								logger.error("Thread Interupted");
-							
-					}
-				} 	  	
-			}
-		 
-		
-	  
-	}
-	public void printit()
-	{
-	    synchronized(this)
-			{
-				System.out.println(validit);
+				
 				logger.info("In Printit"+Thread.currentThread());
 				while(validit)
 				{
@@ -81,22 +49,37 @@ public class Test implements Runnable{
 						System.out.println(i++ +" "+Thread.currentThread());
 						Thread.sleep(100);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+						
 						logger.error("Thread Interupted");
 					}
 				
 				}
 				
 			}
-	
-		
+		 
+		//checking the credential of the user and changing the value of Validit
+		synchronized(lock1)
+		{
+	 logger.debug("In Doit"+Thread.currentThread());
+	          if(valid)
+			{
+				
+				try {
+					 	validit=true;
+					 	System.out.println("in Validate()"+Thread.currentThread());
+					 	logger.debug("Sleeping :"+Thread.currentThread());
+						Thread.sleep(1000);
+						logger.debug("Active :"+Thread.currentThread());
+						validit =false;
+					} 
+				catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							logger.error("Thread Interupted");
+						
+				}
+			} 	  	
+		}
 	}
-	
-	
-	
-	
-	
-	
 }
 
 
