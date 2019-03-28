@@ -12,6 +12,8 @@ public class Test implements Runnable{
     static boolean validit;
 	
 	private static Logger logger=LogManager.getLogger(Test.class);
+
+	
 	//No-args constructor
 	public Test()
 	{
@@ -38,9 +40,9 @@ public class Test implements Runnable{
 	public void run() 
 	{
 		//Printing the numbers only if user is valid
-		 synchronized(lock2)
+		 synchronized(lock1)
 			{
-				
+			
 				logger.info("In Printit"+Thread.currentThread());
 				while(validit)
 				{
@@ -58,7 +60,7 @@ public class Test implements Runnable{
 			}
 		 
 		//checking the credential of the user and changing the value of Validit
-		synchronized(lock1)
+		synchronized(lock2)
 		{
 	 logger.debug("In Doit"+Thread.currentThread());
 	          if(valid)
