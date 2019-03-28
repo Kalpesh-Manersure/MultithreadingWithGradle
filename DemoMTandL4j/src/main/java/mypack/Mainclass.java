@@ -11,14 +11,6 @@ public class Mainclass {
 		ExecutorService exec= Executors.newFixedThreadPool(2);
 		exec.execute(new Test(user));
 		exec.execute(new Test());
-		
-		
-		/*Thread t1=new Thread(new Test(user));
-		Thread t2=new Thread(new Test());
-		t1.setPriority(10);
-		t2.setPriority(1);
-		t1.start();
-		t2.start();*/
 	}
 
 }
