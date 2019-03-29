@@ -1,21 +1,8 @@
 package mypack;
 
-/**
- * @author kalpesh.manersure
- *
- */
-/**
- * @author kalpesh.manersure
- *
- */
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * @author kalpesh.manersure
- *
- */
 public class Test implements Runnable
 {
 	private static Object lock1=new Object();
@@ -42,7 +29,7 @@ public class Test implements Runnable
 			
 	}
 	
-	//param Constructor
+	
 	public Test(Users s)
 	{
 	 valid=validate(s);
