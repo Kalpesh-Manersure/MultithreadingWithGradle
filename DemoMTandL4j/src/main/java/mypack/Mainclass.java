@@ -13,6 +13,7 @@ public class Mainclass {
 		exec.execute(new Test(user));
 		for(int i=0;i<5;i++)
 		exec.execute(new Test());
+		exec.shutdown();
 		
 		
 	}
