@@ -8,6 +8,7 @@ public class Users {
 	{
 		username=Usrname;
 		password=Psswrd;
+		System.out.println("User Param Constructor");
 	}
 	
 	

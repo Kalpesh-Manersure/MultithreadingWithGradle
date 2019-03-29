@@ -3,8 +3,12 @@ package mypack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Test implements Runnable{
-
+/**
+ * @author kalpesh.manersure
+ *
+ */
+public class Test implements Runnable
+{
 	private static Object lock1=new Object();
 	private static Object lock2=new Object();
 	int i=1;
