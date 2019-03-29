@@ -1,0 +1,6 @@
+[INFO ] 2019-03-28 15:04:08.955 [pool-1-thread-1] Test - In PrintitThread[pool-1-thread-1,5,main]
+[DEBUG] 2019-03-28 15:04:08.959 [pool-1-thread-1] Test - In DoitThread[pool-1-thread-1,5,main]
+[DEBUG] 2019-03-28 15:04:08.960 [pool-1-thread-1] Test - Sleeping :Thread[pool-1-thread-1,5,main]
+[DEBUG] 2019-03-28 15:04:09.960 [pool-1-thread-1] Test - Active :Thread[pool-1-thread-1,5,main]
+[INFO ] 2019-03-28 15:04:09.960 [pool-1-thread-2] Test - In PrintitThread[pool-1-thread-2,5,main]
+[DEBUG] 2019-03-28 15:04:09.961 [pool-1-thread-2] Test - In DoitThread[pool-1-thread-2,5,main]
