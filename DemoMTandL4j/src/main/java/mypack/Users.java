@@ -10,6 +10,10 @@ public class Users {
 	private String username;
 	private String password;
 	
+	public Users()
+	{
+		System.out.println("Default Constructor");
+	}
 	public Users(String Usrname,String Psswrd)
 	{
 		System.out.println("Param construtor of User class");
@@ -29,5 +33,12 @@ public class Users {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "User[ Username= "+username+"+Password= "+password+" "+"]";
+		
 	}
 }

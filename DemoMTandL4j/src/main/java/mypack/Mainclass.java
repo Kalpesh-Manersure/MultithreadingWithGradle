@@ -11,8 +11,9 @@ public class Mainclass {
 		System.out.println("In Main Method");
 		Users user =new Users("kalpesh","123456");
 	    System.out.println("Starting Executor Service");
-		ExecutorService exec= Executors.newFixedThreadPool(2);
+		ExecutorService exec= Executors.newFixedThreadPool(5);
 		exec.execute(new Test(user));
+		for(int i=0;i<5;i++)
 		exec.execute(new Test());
 		System.out.println("Shutting down Executor Service");
 		exec.shutdown();
